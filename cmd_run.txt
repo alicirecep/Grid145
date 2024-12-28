@@ -1,0 +1,23 @@
+# CrossBrowser testlerini çalıştırmak için:
+mvn clean test -Dsurefire.suiteXmlFiles=crossbrowser-testng.xml
+
+# Parallel testleri çalıştırmak için:
+mvn clean test -Dsurefire.suiteXmlFiles=parallel-testng.xml
+
+# Genel testleri çalıştırmak için:
+mvn clean test
+
+# Tarayıcı belirterek test çalıştırma (örneğin, Chrome):
+mvn clean test -Dbrowser=chrome
+
+# Remote ayarı belirterek test çalıştırma (örneğin, remote true):
+mvn clean test -DisRemote=true
+
+# Tag belirterek test çalıştırma (örneğin, @smoke):
+mvn clean test -Dcucumber.filter.tags="@test"
+
+# Tarayıcı, remote ve tag belirterek test çalıştırma (örneğin, Chrome, remote true, @smoke tag'i ile):
+mvn clean test -Dbrowser=chrome -DisRemote=true -Dcucumber.filter.tags="@smoke"
+
+mvn clean test -Dbrowser=chrome -DisRemote=true -Dcucumber.filter.tags="@test"
+mvn clean test -Dbrowser=chrome -DisRemote=false -Dcucumber.filter.tags="@test"
